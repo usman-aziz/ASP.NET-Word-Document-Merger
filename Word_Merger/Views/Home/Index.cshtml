@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Merge MS Word Documents in ASP.NET";
+}
+
+<div class="row">
+    <div class="col-md-12" align="center">
+        <h2 class="text-info">Merge Two or More Word DOC/DOCX Documents</h2>
+        <p class="text-info">Merge MS Word documents and get the results in DOCX or PDF format.</p>
+    </div>
+</div>
+<br />
+<form asp-controller="Home" asp-action="UploadFiles" method="post" class="form-inline dropzone" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-12" align="center">
+            <div>
+                <input type="file" id="input-id" name="files" multiple accept=".doc, .docx" class="form-control file" data-preview-file-type="text" />
+            </div>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12" align="center">
+            <div class="input-group-lg">
+                <strong>Save As</strong>
+                <select name="outputFormat" class="form-control">
+                    <option value="DOCX">DOCX</option>
+                    <option value="PDF">PDF</option>
+                </select>
+                <button type="submit" class="form-control btn btn-success">Merge and Download</button>               
+            </div> 
+        </div>
+    </div>
+</form>
+<script>
+    // Drag and drop plugin options
+    $("#input-id").fileinput({ 'mainClass': "input-group-lg", 'showBrowse': true, 'showUpload': false, 'previewFileType': 'any', 'showClose': false, 'maxFileCount': 5, });
+</script>
+
